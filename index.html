@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact form to Email using javascript</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <form onsubmit="SendEmail(); reset(); return false; ">
+            <h3>Get in Touch</h3>
+            <input type="text" id="name" placeholder="Your Name" required >
+            <input type="text" id="email" placeholder="Email Id" required >
+            <input type="text" id="phone" placeholder="Phone No." required >
+            <textarea id="message" rows="4" placeholder="how can we help you ? "></textarea>
+            <button type="submit" >Send Mail</button>
+        </form>
+    </div>
+    <script src="https://smtpjs.com/v3/smtp.js">
+    </script>
+    <script>   
+        function SendEmail(){
+            Email.send({
+                Host : "smtp.elasticemail.com",
+                Username : "rtc57359@cdfaq.com",
+                Password : "**********01E35",
+                To : 'xyz@gmail.com',
+                From : document.getElementById("email").value,
+                Subject : "This is the subject",
+                Body : "Hii"+document.getElementById("name").value+"<br>"+document.getElementById("message").value
+            }).then(
+                message => alert(message)
+            );
+        }
+    </script>
+</body>
+</html> 
+<!-- 
+Email.send({
+    Host : "smtp.yourisp.com",
+    Username : "username",
+    Password : "password",
+    To : 'them@website.com',
+    From : "you@isp.com",
+    Subject : "This is the subject",
+    Body : "And this is the body"
+}).then(
+  message => alert(message)
+); -->
