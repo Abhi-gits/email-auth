@@ -20,32 +20,6 @@
     </div>
     <script src="https://smtpjs.com/v3/smtp.js">
     </script>
-    <script>   
-        function SendEmail(){
-            Email.send({
-                Host : "smtp.elasticemail.com",
-                Username : "rtc57359@cdfaq.com",
-                Password : "**********01E35",
-                To : 'xyz@gmail.com',
-                From : document.getElementById("email").value,
-                Subject : "This is the subject",
-                Body : "Hii"+document.getElementById("name").value+"<br>"+document.getElementById("message").value
-            }).then(
-                message => alert(message)
-            );
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html> 
-<!-- 
-Email.send({
-    Host : "smtp.yourisp.com",
-    Username : "username",
-    Password : "password",
-    To : 'them@website.com',
-    From : "you@isp.com",
-    Subject : "This is the subject",
-    Body : "And this is the body"
-}).then(
-  message => alert(message)
-); -->
